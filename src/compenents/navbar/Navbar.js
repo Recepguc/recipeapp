@@ -5,7 +5,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   return (
     <Nav>
-      <Logo to="/home">
+      <Logo onClick={()=>setOpen(!open)} to="/home">
         <i>{"<RecepGüç>"}</i>
         <span>recipe</span>
         <Hamburger onClick={()=>setOpen(!open)}>
@@ -15,9 +15,9 @@ const Navbar = () => {
         </Hamburger>
       </Logo>
       <Menu open={open}>
-        <MenuLink to="/abaout">About</MenuLink>
+        <MenuLink onClick={()=>setOpen(!open)} to="/abaout">About</MenuLink>
         <MenuLink to="/github">Github</MenuLink>
-        <MenuLink to="/Logout">Logout</MenuLink>
+        <MenuLink onClick={()=>setOpen(!open)} to="/Logout">Logout</MenuLink>
       </Menu>
     </Nav>
     
