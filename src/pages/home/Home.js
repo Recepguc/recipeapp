@@ -7,7 +7,7 @@ import RecipeCardComp from "./RecipeCardComp";
 import homeSvg from "../../assets/home.svg";
 
 const APP_ID = "0fcc65b4";
-const APP_KEY = "38c8b829fcc3757fd9ef6774d839916e	—";
+const APP_KEY = "38c8b829fcc3757fd9ef6774d839916e";
 
 const Home = () => {
   const [query, setQuery] = useState("");
