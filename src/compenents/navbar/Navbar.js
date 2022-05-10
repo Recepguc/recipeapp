@@ -3,6 +3,7 @@ import { Hamburger, Logo, Menu, MenuLink, Nav } from "./NavbarStyled";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [github, setGithub] = useState("");
   return (
     <Nav>
       <Logo onClick={() => setOpen(!open)} to="/home">
@@ -16,11 +17,24 @@ const Navbar = () => {
       </Hamburger>
 
       <Menu open={open}>
-        <MenuLink onClick={() => setOpen(!open)} to="/abaout">
+        <MenuLink onClick={() => setOpen(!open)} to="/about">
           About
         </MenuLink>
-        <MenuLink to="/github">Github</MenuLink>
-        <MenuLink onClick={() => setOpen(!open)} to="/Logout">
+        <MenuLink
+          onClick={() =>
+            setGithub((window.location.href = "https://github.com/Recepguc"))
+          }
+          to={github}
+          target="_blank"
+        >
+          Githubb
+        </MenuLink>
+
+        <MenuLink
+          onClick={() => setOpen(!open)}
+          onMouseUp={() => sessionStorage.clear()}
+          to="/"
+        >
           Logout
         </MenuLink>
       </Menu>
